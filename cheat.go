@@ -128,10 +128,12 @@ func showCheats(cheatfile string, cmdname string) {
 
 		if strings.HasPrefix(line, "#") {
 			fmt.Fprintln(stdout, "\x1b[36;1m"+line+"\x1b[0m")
-		} else if len(line) > 0 {
+		} else if len(line) > 0 && strings.HasPrefix(line, cmdname) {
 			fmt.Fprintln(stdout, "\x1b[37;4m("+strconv.Itoa(i)+")\x1b[0m "+
 			    "\x1b[33;1m" + line + "\x1b[0m ")
 			i++
+		} else if len(line) > 0 {
+            fmt.Fprintln(stdout, "\x1b[33;1m" + line + "\x1b[0m ")
 		} else {
 			fmt.Fprintln(stdout, line)
 		}

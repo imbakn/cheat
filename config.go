@@ -20,7 +20,7 @@ var defaults = `{
     "highlight": true,
     "linewrap": 79,
     "cheatdirs": [
-        "~/.cheatsheets"
+        "~/.smart/cheatsheets"
     ],
     "editor": "vim"
 }`
